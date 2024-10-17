@@ -1,54 +1,48 @@
-body{
-    box-sizing: content-box;
-    box-sizing: border-box;
-    padding: 1px;
-}
-h1{
-    box-sizing: border-box;
-    margin: auto;
-    padding: auto;
-    padding-left: 40%;
-}
-h2{
-    box-sizing: border-box;
-    margin: auto;
-    padding: auto;
-    padding-left: 30%;
-}
-h3{
-    box-sizing: border-box;
-    margin: auto;
-    padding: auto;
-    padding-left: 39%;
-}
-.button {
-    box-sizing: border-box;
-    text-decoration: none;
-    margin: 1%;
-    padding: 1%;
-
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
-table{
-    box-sizing: border-box;
-    width: 70%;
-    margin: 5% auto;
+table {
+    margin-top: 20px;
     border-collapse: collapse;
 }
-th,td{
-    box-sizing: border-box;
-    border: 1px solid salmon;
-    padding: 2%;
-    text-align: center;
-    background-color: rgb(80, 150, 150);
-    border-radius: 10px;
-    border-style: hidden;
-}
-pre{
-    text-align: center;
-    font-size: large;
-    box-sizing: border-box;
-    margin: auto;
-    padding: auto;
+
+th a {
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
 }
 
+th a:hover {
+    background-color: #0056b3;
+}
+
+#lab1-details {
+    margin-top: 20px;
+}
+
+#lab1-details button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#lab1-details button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
