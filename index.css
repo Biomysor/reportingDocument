@@ -45,12 +45,12 @@ h1, h2, h3 {
     text-align: center; 
 }
 
-#lab1-details, #lab2-details {
+#lab1-details, #lab2-details, #lab3-details {
     margin-top: 20px;
     text-align: center; 
 }
 
-#lab1-details button, #lab2-details button {
+#lab1-details button, #lab2-details button,  #lab3-details button {
     margin: 5px;
     padding: 10px;
     background-color: #28a745;
@@ -60,7 +60,7 @@ h1, h2, h3 {
     cursor: pointer;
 }
 
-#lab1-details button:hover, #lab2-details button:hover {
+#lab1-details button:hover, #lab2-details button:hover,#lab3-details button:hover {
     background-color: #218838;
 }
 
