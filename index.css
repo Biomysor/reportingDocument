@@ -6,14 +6,30 @@ body {
     padding: 20px;
 }
 
+.image {
+    display: flex;
+    position: absolute; 
+    top: 10px;
+    right: 10px; 
+    max-width: 150px; 
+    height: auto; 
+    z-index: 100; 
+}
+
 table {
+    display: flex;
     margin-top: 20px;
     border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: center; 
 }
 
 th a {
     padding: 10px 20px;
-    display: inline-block;
+    display: flex;
     background-color: #007bff;
     color: white;
     text-decoration: none;
@@ -25,11 +41,16 @@ th a:hover {
     background-color: #0056b3;
 }
 
-#lab1-details{
-    margin-top: 20px;
+h1, h2, h3 {
+    text-align: center; 
 }
 
-#lab1-details button {
+#lab1-details, #lab2-details {
+    margin-top: 20px;
+    text-align: center; 
+}
+
+#lab1-details button, #lab2-details button {
     margin: 5px;
     padding: 10px;
     background-color: #28a745;
@@ -39,40 +60,26 @@ th a:hover {
     cursor: pointer;
 }
 
-#lab2-details button:hover {
+#lab1-details button:hover, #lab2-details button:hover {
     background-color: #218838;
 }
-#lab2-details{
-    margin-top: 20px;
-}
 
-#lab2-details button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#lab2-details button:hover {
-    background-color: #218838;
-}
 .hidden {
     display: none;
 }
-.hidden1 {
-    display: none;
-}
+
 #content {
-    margin-top: 20px;
-    padding: 15px;
-    max-width: 600px;
+    
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     font-size: 18px;
-    text-align: left;
     line-height: 1.6;
+    margin-top: 20px;
+    margin-left: 400px;
+    padding: 15px;
+    max-width: 1000px;
+    text-align: center;
+  
 }
+

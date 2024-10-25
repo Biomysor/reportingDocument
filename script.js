@@ -4,44 +4,56 @@ const contentDiv = document.getElementById('content');
 const lab2Button = document.getElementById('lab2');
 const lab2Details = document.getElementById('lab2-details');
 
+// Функція для відображення тексту та посилання
+function displayContent(text, link) {
+    contentDiv.innerHTML = ''; // Очищаємо вміст
+
+    const paragraph = document.createElement('p');
+    paragraph.textContent = text;
+    paragraph.style.textAlign = 'center'; // Центруємо текст
+    contentDiv.appendChild(paragraph);
+
+    if (link) {
+        const aLink = document.createElement('a');
+        aLink.href = link;
+        aLink.textContent = 'посилання';
+        aLink.target = '_blank'; 
+        aLink.style.display = 'block'; // Розміщуємо посилання на новому рядку
+        aLink.style.textAlign = 'center'; // Центруємо посилання
+        contentDiv.appendChild(aLink);
+    }
+}
+
+// Обробник для лабораторної роботи 1
 lab1Button.addEventListener('click', function (event) {
-    lab2Details.classList.add('hidden1')
     event.preventDefault(); 
-
-
-    lab1Details.classList.toggle('hidden');
-    contentDiv.innerHTML = ''; 
+    lab2Details.classList.add('hidden'); // Ховаємо деталі 2 лабораторної роботи
+    lab1Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 1 лабораторної роботи
+    contentDiv.innerHTML = ''; // Очищаємо вміст
 });
 
+// Обробник для лабораторної роботи 2
 lab2Button.addEventListener('click', function (event) {
-    lab1Details.classList.add('hidden')
     event.preventDefault(); 
-
-
-    lab2Details.classList.toggle('hidden1');
-    contentDiv.innerHTML = ''; 
+    lab1Details.classList.add('hidden'); // Ховаємо деталі 1 лабораторної роботи
+    lab2Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 2 лабораторної роботи
+    contentDiv.innerHTML = ''; // Очищаємо вміст
 });
 
+// Обробник для кнопок в деталях лабораторної роботи 1
 lab1Details.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text'); 
-
-       
-        contentDiv.innerHTML = '';
-
-
-        const paragraph = document.createElement('p');
-        paragraph.textContent = text;
-        contentDiv.appendChild(paragraph);
-
-  
-        if (text.includes('Тема')) {
-            const link = document.createElement('a');
-            link.href = 'https://github.com/Biomysor/IC-33_Chulii_Lab-1';
-            link.textContent = 'посилання';
-            link.target = '_blank'; 
-            contentDiv.appendChild(link);
-        }
+        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 1
+        displayContent(text, link);
     }
 });
 
+// Обробник для кнопок в деталях лабораторної роботи 2
+lab2Details.addEventListener('click', function (event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text'); 
+        const link = event.target.getAttribute('data-link'); // Отримуємо посилання з кнопки
+        displayContent(text, link);
+    }
+});
