@@ -5,6 +5,8 @@ const lab2Button = document.getElementById('lab2');
 const lab2Details = document.getElementById('lab2-details');
 const lab3Button = document.getElementById('lab3');
 const lab3Details = document.getElementById('lab3-details');
+const lab4Button = document.getElementById('lab4');
+const lab4Details = document.getElementById('lab4-details');
 // Функція для відображення тексту та посилання
 function displayContent(text, link) {
     contentDiv.innerHTML = ''; // Очищаємо вміст
@@ -50,6 +52,14 @@ lab3Button.addEventListener('click', function (event) {
     lab3Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 1 лабораторної роботи
     contentDiv.innerHTML = ''; // Очищаємо вміст
 });
+lab4Button.addEventListener('click', function (event) {
+    event.preventDefault(); 
+    lab1Details.classList.add('hidden');
+    lab3Details.classList.add('hidden'); // Ховаємо деталі 1 лабораторної роботи
+    lab2Details.classList.add('hidden'); // Перемикаємо видимість деталей 2 лабораторної роботи
+    lab4Details.classList.toggle('hidden');
+    contentDiv.innerHTML = ''; // Очищаємо вміст
+});
 // Обробник для кнопок в деталях лабораторної роботи 1
 lab1Details.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
@@ -63,14 +73,21 @@ lab1Details.addEventListener('click', function (event) {
 lab2Details.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Отримуємо посилання з кнопки
+        const link = event.target.getAttribute('data-link'); // Отримуємо посилання з кнопки 
         displayContent(text, link);
     }
 });
 lab3Details.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 1
+        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 3
+        displayContent(text, link);
+    }
+});
+lab4Details.addEventListener('click', function (event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text'); 
+        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 4
         displayContent(text, link);
     }
 });
