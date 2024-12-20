@@ -1,14 +1,17 @@
 const lab1Button = document.getElementById('lab1');
 const lab1Details = document.getElementById('lab1-details');
-const contentDiv = document.getElementById('content'); 
+const contentDiv = document.getElementById('content');
 const lab2Button = document.getElementById('lab2');
 const lab2Details = document.getElementById('lab2-details');
 const lab3Button = document.getElementById('lab3');
 const lab3Details = document.getElementById('lab3-details');
 const lab4Button = document.getElementById('lab4');
 const lab4Details = document.getElementById('lab4-details');
-// Функція для відображення тексту та посилання
-function displayContent(text, link) {
+const lab5Button = document.getElementById('lab5');
+const lab5Details = document.getElementById('lab5-details');
+
+// Функція для відображення тексту, посилання та зображень
+function displayContent(text, link, photo1, photo2) {
     contentDiv.innerHTML = ''; // Очищаємо вміст
 
     const paragraph = document.createElement('p');
@@ -19,75 +22,121 @@ function displayContent(text, link) {
     if (link) {
         const aLink = document.createElement('a');
         aLink.href = link;
-        aLink.textContent = 'посилання';
-        aLink.target = '_blank'; 
-        aLink.style.display = 'block'; // Розміщуємо посилання на новому рядку
-        aLink.style.textAlign = 'center'; // Центруємо посилання
+        aLink.textContent = 'Посилання';
+        aLink.target = '_blank';
+        aLink.style.display = 'block';
+        aLink.style.textAlign = 'center';
         contentDiv.appendChild(aLink);
+    }
+
+    if (photo1) {
+        const scrin1 = document.createElement('img');
+        scrin1.src = photo1;
+        scrin1.alt = 'Скріншот 1';
+        scrin1.style.display = 'block';
+        scrin1.style.margin = '20px auto';
+        contentDiv.appendChild(scrin1);
+    }
+
+    if (photo2) {
+        const scrin2 = document.createElement('img');
+        scrin2.src = photo2;
+        scrin2.alt = 'Скріншот 2';
+        scrin2.style.display = 'block';
+        scrin2.style.margin = '20px auto';
+        contentDiv.appendChild(scrin2);
     }
 }
 
-// Обробник для лабораторної роботи 1
-lab1Button.addEventListener('click', function (event) {
-    event.preventDefault(); 
+// Обробники для кнопок лабораторних робіт
+lab1Button.addEventListener('click', function(event) {
+    event.preventDefault();
     lab2Details.classList.add('hidden');
-    lab3Details.classList.add('hidden'); // Ховаємо деталі 2 лабораторної роботи
-    lab1Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 1 лабораторної роботи
-    contentDiv.innerHTML = ''; // Очищаємо вміст
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab1Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
 });
 
-// Обробник для лабораторної роботи 2
-lab2Button.addEventListener('click', function (event) {
-    event.preventDefault(); 
+lab2Button.addEventListener('click', function(event) {
+    event.preventDefault();
     lab1Details.classList.add('hidden');
-    lab3Details.classList.add('hidden'); // Ховаємо деталі 1 лабораторної роботи
-    lab2Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 2 лабораторної роботи
-    contentDiv.innerHTML = ''; // Очищаємо вміст
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab2Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
 });
 
-lab3Button.addEventListener('click', function (event) {
-    event.preventDefault(); 
+lab3Button.addEventListener('click', function(event) {
+    event.preventDefault();
     lab1Details.classList.add('hidden');
-    lab2Details.classList.add('hidden'); // Ховаємо деталі 2 лабораторної роботи
-    lab3Details.classList.toggle('hidden'); // Перемикаємо видимість деталей 1 лабораторної роботи
-    contentDiv.innerHTML = ''; // Очищаємо вміст
+    lab2Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab3Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
 });
-lab4Button.addEventListener('click', function (event) {
-    event.preventDefault(); 
+
+lab4Button.addEventListener('click', function(event) {
+    event.preventDefault();
     lab1Details.classList.add('hidden');
-    lab3Details.classList.add('hidden'); // Ховаємо деталі 1 лабораторної роботи
-    lab2Details.classList.add('hidden'); // Перемикаємо видимість деталей 2 лабораторної роботи
+    lab2Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab3Details.classList.add('hidden');
     lab4Details.classList.toggle('hidden');
-    contentDiv.innerHTML = ''; // Очищаємо вміст
-});
-// Обробник для кнопок в деталях лабораторної роботи 1
-lab1Details.addEventListener('click', function (event) {
-    if (event.target.tagName === 'BUTTON') {
-        const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 1
-        displayContent(text, link);
-    }
+    contentDiv.innerHTML = '';
 });
 
-// Обробник для кнопок в деталях лабораторної роботи 2
-lab2Details.addEventListener('click', function (event) {
+lab5Button.addEventListener('click', function(event) {
+    event.preventDefault();
+    lab1Details.classList.add('hidden');
+    lab2Details.classList.add('hidden');
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
+});
+lab1Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
-        const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Отримуємо посилання з кнопки 
-        displayContent(text, link);
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+       
+        displayContent(text, link); // Відображаємо два зображення
     }
 });
-lab3Details.addEventListener('click', function (event) {
+lab2Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
-        const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 3
-        displayContent(text, link);
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+       
+        displayContent(text, link); // Відображаємо два зображення
     }
 });
-lab4Details.addEventListener('click', function (event) {
+lab3Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
-        const text = event.target.getAttribute('data-text'); 
-        const link = event.target.getAttribute('data-link'); // Постійне посилання для лаби 4
-        displayContent(text, link);
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+       
+        displayContent(text, link); // Відображаємо два зображення
+    }
+});
+lab4Details.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+       
+        displayContent(text, link); // Відображаємо два зображення
+    }
+});
+lab5Details.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+        const photo1 = event.target.getAttribute('data-photo1');  // Перше зображення
+        const photo2 = event.target.getAttribute('data-photo2');  // Друге зображення
+
+        displayContent(text, link, photo1, photo2); // Відображаємо два зображення
     }
 });
