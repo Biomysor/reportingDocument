@@ -9,7 +9,12 @@ const lab4Button = document.getElementById('lab4');
 const lab4Details = document.getElementById('lab4-details');
 const lab5Button = document.getElementById('lab5');
 const lab5Details = document.getElementById('lab5-details');
-
+const lab6Button = document.getElementById('lab6');
+const lab6Details = document.getElementById('lab6-details');
+const lab7Button = document.getElementById('lab7');
+const lab7Details = document.getElementById('lab7-details');
+const lab8Button = document.getElementById('lab8');
+const lab8Details = document.getElementById('lab8-details');
 // Функція для відображення тексту, посилання та зображень
 function displayContent(text, link, photo1, photo2) {
     contentDiv.innerHTML = ''; // Очищаємо вміст
@@ -55,6 +60,9 @@ lab1Button.addEventListener('click', function(event) {
     lab3Details.classList.add('hidden');
     lab4Details.classList.add('hidden');
     lab5Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
     lab1Details.classList.toggle('hidden');
     contentDiv.innerHTML = '';
 });
@@ -65,6 +73,9 @@ lab2Button.addEventListener('click', function(event) {
     lab3Details.classList.add('hidden');
     lab4Details.classList.add('hidden');
     lab5Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
     lab2Details.classList.toggle('hidden');
     contentDiv.innerHTML = '';
 });
@@ -75,6 +86,9 @@ lab3Button.addEventListener('click', function(event) {
     lab2Details.classList.add('hidden');
     lab4Details.classList.add('hidden');
     lab5Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
     lab3Details.classList.toggle('hidden');
     contentDiv.innerHTML = '';
 });
@@ -85,6 +99,9 @@ lab4Button.addEventListener('click', function(event) {
     lab2Details.classList.add('hidden');
     lab5Details.classList.add('hidden');
     lab3Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
     lab4Details.classList.toggle('hidden');
     contentDiv.innerHTML = '';
 });
@@ -95,7 +112,46 @@ lab5Button.addEventListener('click', function(event) {
     lab2Details.classList.add('hidden');
     lab3Details.classList.add('hidden');
     lab4Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
     lab5Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
+});
+lab6Button.addEventListener('click', function(event) {
+    event.preventDefault();
+    lab1Details.classList.add('hidden');
+    lab2Details.classList.add('hidden');
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
+    lab6Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
+});
+lab7Button.addEventListener('click', function(event) {
+    event.preventDefault();
+    lab1Details.classList.add('hidden');
+    lab2Details.classList.add('hidden');
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab8Details.classList.add('hidden');
+    lab7Details.classList.toggle('hidden');
+    contentDiv.innerHTML = '';
+});
+lab8Button.addEventListener('click', function(event) {
+    event.preventDefault();
+    lab1Details.classList.add('hidden');
+    lab2Details.classList.add('hidden');
+    lab3Details.classList.add('hidden');
+    lab4Details.classList.add('hidden');
+    lab5Details.classList.add('hidden');
+    lab6Details.classList.add('hidden');
+    lab7Details.classList.add('hidden');
+    lab8Details.classList.toggle('hidden');
     contentDiv.innerHTML = '';
 });
 lab1Details.addEventListener('click', function(event) {
@@ -140,3 +196,34 @@ lab5Details.addEventListener('click', function(event) {
         displayContent(text, link, photo1, photo2); // Відображаємо два зображення
     }
 });
+lab6Details.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+        const photo1 = event.target.getAttribute('data-photo1');  // Перше зображення
+        const photo2 = event.target.getAttribute('data-photo2');  // Друге зображення
+
+        displayContent(text, link, photo1, photo2); // Відображаємо два зображення
+    }
+});
+lab7Details.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+        const photo1 = event.target.getAttribute('data-photo1');  // Перше зображення
+        const photo2 = event.target.getAttribute('data-photo2');  // Друге зображення
+
+        displayContent(text, link, photo1, photo2); // Відображаємо два зображення
+    }
+});
+lab8Details.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const text = event.target.getAttribute('data-text');
+        const link = event.target.getAttribute('data-link');
+        const photo1 = event.target.getAttribute('data-photo1');  // Перше зображення
+        const photo2 = event.target.getAttribute('data-photo2');  // Друге зображення
+
+        displayContent(text, link, photo1, photo2); // Відображаємо два зображення
+    }
+});
+

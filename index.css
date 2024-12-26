@@ -1,9 +1,12 @@
 body {
-    display: flex;
+  
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
+    
     font-family: Arial, sans-serif;
     padding: 20px;
+
 }
 
 .image {
@@ -45,12 +48,12 @@ h1, h2, h3 {
     text-align: center; 
 }
 
-#lab1-details, #lab2-details, #lab3-details, #lab4-details, #lab5-details {
+#lab1-details, #lab2-details, #lab3-details, #lab4-details, #lab5-details, #lab6-details,#lab7-details,#lab8-details {
     margin-top: 20px;
     text-align: center; 
 }
 
-#lab1-details button, #lab2-details button,  #lab3-details button, #lab4-details button, #lab5-details button{
+#lab1-details button, #lab2-details button,  #lab3-details button, #lab4-details button, #lab5-details button,#lab6-details button,#lab7-details button,#lab8-details button{
     margin: 5px;
     padding: 10px;
     background-color: #28a745;
@@ -60,7 +63,7 @@ h1, h2, h3 {
     cursor: pointer;
 }
 
-#lab1-details button:hover, #lab2-details button:hover,#lab3-details button:hover, #lab4-details button:hover, #lab5-details button:hover {
+#lab1-details button:hover, #lab2-details button:hover,#lab3-details button:hover, #lab4-details button:hover, #lab5-details button:hover,#lab6-details button:hover,#lab7-details button:hover,#lab8-details button:hover {
     background-color: #218838;
 }
 
