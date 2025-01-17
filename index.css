@@ -51,6 +51,7 @@ h1, h2, h3 {
 #lab1-details, #lab2-details, #lab3-details, #lab4-details, #lab5-details, #lab6-details,#lab7-details,#lab8-details {
     margin-top: 20px;
     text-align: center; 
+    
 }
 
 #lab1-details button, #lab2-details button,  #lab3-details button, #lab4-details button, #lab5-details button,#lab6-details button,#lab7-details button,#lab8-details button{
@@ -79,11 +80,14 @@ h1, h2, h3 {
     font-size: 18px;
     line-height: 1.6;
     margin-top: 20px;
-    margin-left: 400px;
+    align-items: center;
     padding: 15px;
+    padding-top: 20px;
     max-width: 1000px;
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+   
 }
 
 

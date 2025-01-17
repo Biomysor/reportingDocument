@@ -29,7 +29,7 @@ function displayContent(text, link, photo1, photo2) {
         aLink.href = link;
         aLink.textContent = 'Посилання';
         aLink.target = '_blank';
-        aLink.style.display = 'block';
+        aLink.style.display = 'flex';
         aLink.style.textAlign = 'center';
         contentDiv.appendChild(aLink);
     }
@@ -38,8 +38,10 @@ function displayContent(text, link, photo1, photo2) {
         const scrin1 = document.createElement('img');
         scrin1.src = photo1;
         scrin1.alt = 'Скріншот 1';
-        scrin1.style.display = 'block';
+        scrin1.style.display = 'flex';
+        scrin1.style.flexDirection = 'inline';
         scrin1.style.margin = '20px auto';
+        scrin1.style.width='50%';
         contentDiv.appendChild(scrin1);
     }
 
@@ -47,11 +49,13 @@ function displayContent(text, link, photo1, photo2) {
         const scrin2 = document.createElement('img');
         scrin2.src = photo2;
         scrin2.alt = 'Скріншот 2';
-        scrin2.style.display = 'block';
+        scrin2.style.display = 'flex';
+        scrin2.style.flexDirection = 'inline';
         scrin2.style.margin = '20px auto';
-        scrin2.style.width='1000px';
+        scrin2.style.width='50%';
         contentDiv.appendChild(scrin2);
     }
+
 }
 
 // Обробники для кнопок лабораторних робіт
@@ -159,24 +163,27 @@ lab1Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text');
         const link = event.target.getAttribute('data-link');
-       
-        displayContent(text, link); // Відображаємо два зображення
+        const photo1 = event.target.getAttribute('data-photo1');
+        const photo2 = event.target.getAttribute('data-photo2');
+        displayContent(text, link,photo1,photo2); 
     }
 });
 lab2Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text');
         const link = event.target.getAttribute('data-link');
-       
-        displayContent(text, link); // Відображаємо два зображення
+        const photo1 = event.target.getAttribute('data-photo1');
+        const photo2 = event.target.getAttribute('data-photo2');
+        displayContent(text, link,photo1,photo2); 
     }
 });
 lab3Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text');
         const link = event.target.getAttribute('data-link');
-       
-        displayContent(text, link); // Відображаємо два зображення
+        const photo1 = event.target.getAttribute('data-photo1');
+        const photo2 = event.target.getAttribute('data-photo2');
+        displayContent(text, link,photo1,photo2); // Відображаємо два зображення
     }
 });
 lab4Details.addEventListener('click', function(event) {
@@ -184,7 +191,8 @@ lab4Details.addEventListener('click', function(event) {
         const text = event.target.getAttribute('data-text');
         const link = event.target.getAttribute('data-link');
         const photo1 = event.target.getAttribute('data-photo1');
-        displayContent(text, link,photo1); // Відображаємо два зображення
+        const photo2 = event.target.getAttribute('data-photo2');
+        displayContent(text, link,photo1,photo2); // Відображаємо два зображення
     }
 });
 lab5Details.addEventListener('click', function(event) {
@@ -223,8 +231,7 @@ lab8Details.addEventListener('click', function(event) {
         const link = event.target.getAttribute('data-link');
         const photo1 = event.target.getAttribute('data-photo1');  // Перше зображення
         const photo2 = event.target.getAttribute('data-photo2');  // Друге зображення
-
-        displayContent(text, link, photo1, photo2); // Відображаємо два зображення
+        displayContent(text, link,photo1,photo2); // Відображаємо два зображення
     }
 });
 
