@@ -49,6 +49,7 @@ function displayContent(text, link, photo1, photo2) {
         scrin2.alt = 'Скріншот 2';
         scrin2.style.display = 'block';
         scrin2.style.margin = '20px auto';
+        scrin2.style.width='1000px';
         contentDiv.appendChild(scrin2);
     }
 }
@@ -182,8 +183,8 @@ lab4Details.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
         const text = event.target.getAttribute('data-text');
         const link = event.target.getAttribute('data-link');
-       
-        displayContent(text, link); // Відображаємо два зображення
+        const photo1 = event.target.getAttribute('data-photo1');
+        displayContent(text, link,photo1); // Відображаємо два зображення
     }
 });
 lab5Details.addEventListener('click', function(event) {
